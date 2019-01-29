@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <script type="text/javascript">
+  	function setTargetValues() {
+  		var target = 15;
+  		var reached = 14;
+   		document.getElementById('reached').innerHTML = '$' + reached;
+   		document.getElementById('remaining').innerHTML = '$' + (target - reached);
+   		document.getElementById('progress').setAttribute('style', 'width: ' + Math.round(reached / target * 100) + '%');
+   		document.getElementById('target-icon-bottom').innerHTML = '$' + target;
+  	}
+  </script>
+  <body onload="setTargetValues()">
+  	<div class="page">
+  		<div class="header">Target Indicator Demo</div>
+  		<div class="demo">
+  			<div class="indicator">
+  				<p>Reached:</p>
+    			<div class="progress-bar">
+    				<div id="progress">
+    					<div class="pointer"></div>
+    					<div id="reached"></div>
+    				</div>
+    			</div>
+  				<div class="target-icon">
+  					<div class="target-icon-top">Target</div>
+  					<div id="target-icon-bottom"></div>
+  				</div>
+  			</div>
+  			<div class="info">
+  				<div class="info-icon">i</div>
+  					You need <div id="remaining"></div> more to reach your target.
+  				</div>
+  		</div>
+  	</div>
+  </body>
+</html>
